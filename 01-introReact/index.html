@@ -1,11 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="root"></div>
-</body>
+    <!-- CDN Links -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script>
+      const body = document.querySelector("body");
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      console.log(root);
+
+      //   root.render(
+      //     React.createElement("h1", null, "maa ki chut bha!!!!!!!"),
+      //     React.createElement("p", null, "hola amigo"),
+      //   );
+      const h1 = React.createElement("h1", null, "maa ki chut bha!!!!!!!");
+      const p = React.createElement("p", null, "hola amigo");
+      
+
+      const button = React.createElement(
+        "button",
+        { onClick: handleClick },
+        "Activate Me",
+      );
+      function handleClick() {
+         alert("maaa chodd diiii")
+        body.style.background = "yellow";
+       
+
+      }
+      const div = React.createElement("div", null, h1, p, button);
+      root.render(div);
+    </script>
+  </body>
 </html>
